@@ -57,6 +57,7 @@ This is simple chat app for vanilla coding 11th mid term exam by Yoon Jinho (윤
 ---
 ## Extra TODOS
 시험 제출 후 추가로 시도해보려는 부분 입니다.
+- [x] 모든 console warnning 요소 제거 완료
 - [ ] Test Code 작성
 - [ ] 이미지나 파일 전송기능 추가
 - [ ] Dummy User API 연동해서 Sample 자동 생성

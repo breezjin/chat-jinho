@@ -5,8 +5,8 @@ import randomUsers from './data-users.json';
 const initialState = {
   allUsers: [...randomUsers],
   chattingUsers: [],
+  currentUser: {},
   allChats: [...presetChats],
-  currentUser: {}
 }
 
 for (let i = 0; i < initialState.allChats.length; i++) {
@@ -25,15 +25,15 @@ export const chatSlice = createSlice({
       state.currentUser = action.payload;
     },
     addMsg: (state, action) => {
-      if (state.currentUser) {
+      if (state.currentUser.name) {
         for (const user of state.chattingUsers) {
           if (user.name === state.currentUser.name) {
             for (const chat of state.allChats) {
               if (chat.name === state.currentUser.name) {
                 chat.msgs.push(action.payload.sendingMsg);
+                return;
               }
             }
-            return;
           }
         }
 

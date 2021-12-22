@@ -21,7 +21,7 @@ export default function ChatList() {
   return (
     <StyledChatList>
       {Array.from(sortedAllChats).map(item =>
-        <ChatCard user={findUserbyChat(item)} chat={item} />
+        <ChatCard key={item.id} user={findUserbyChat(item)} chat={item} />
       )}
     </StyledChatList>
   );

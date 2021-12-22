@@ -37,7 +37,11 @@ export default function Chatting() {
         }
         {!currentUser.name &&
           <div className='welcome'>
-            <img className='welcome-img' src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcuIqix%2FbtrozwHK0Ib%2FjXxm74TqQKKalK0ZEQiEU0%2Fimg.png' alt='welcome' />
+            <img
+              className='welcome-img'
+              src='https://bit.ly/3H3pG7N'
+              alt='welcome'
+            />
             <span>chat-jinho에 오신 것을 환영합니다. 어서 오세요 🤗</span>
             <span>바닐라코딩 부트캠프11기 동기들 이름 20개가 랜덤으로 세팅되어 있습니다.</span>
           </div>
@@ -45,9 +49,15 @@ export default function Chatting() {
         {isUerSelected && currentUser.name &&
           Array.from(roomChats).map(item => {
             if (item.name === currentUser.name) {
-              return <ChatBubbleReceive chat={item} />
+              return <ChatBubbleReceive
+                key={`${item.id}${roomChats.indexOf(item)}`}
+                chat={item}
+                />
             }
-            return <ChatBubbleSend chat={item} />
+            return <ChatBubbleSend
+                key={`${item.id}${roomChats.indexOf(item)}`}
+                chat={item}
+                />
           })
         }
       </div>
