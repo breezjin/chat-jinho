@@ -4,10 +4,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function Friends({ friends, foundFriends, sort }) {
-  const ascFriends = [...friends].sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
-  const desFriends = [...friends].sort((a, b) => a.name < b.name ? 1 : a.name > b.name ? -1 : 0);
-  const ascFoundFriends = [...foundFriends].sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
-  const desFoundFriends = [...foundFriends].sort((a, b) => a.name < b.name ? 1 : a.name > b.name ? -1 : 0);
+  const ascFriends = [...friends].sort((a, b) =>
+    a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+  );
+  const descFriends = [...friends].sort((a, b) =>
+    a.name < b.name ? 1 : a.name > b.name ? -1 : 0
+  );
+  const ascFoundFriends = [...foundFriends].sort((a, b) =>
+    a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+  );
+  const descFoundFriends = [...foundFriends].sort((a, b) =>
+    a.name < b.name ? 1 : a.name > b.name ? -1 : 0
+  );
 
   return (
     <StyledFriends>
@@ -17,7 +25,7 @@ export default function Friends({ friends, foundFriends, sort }) {
         )
       }
       {foundFriends.length === 0 && !sort &&
-        Array.from(desFriends).map(user =>
+        Array.from(descFriends).map(user =>
           <FriendCard key={user.id} user={user} />
         )
       }
@@ -27,7 +35,7 @@ export default function Friends({ friends, foundFriends, sort }) {
         )
       }
       {foundFriends.length !== 0 && !sort &&
-        Array.from(desFoundFriends).map(user =>
+        Array.from(descFoundFriends).map(user =>
           <FriendCard key={user.id} user={user} />
         )
       }

@@ -2,9 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Button({ children, onClick, type }) {
+export default function Button({ children, onClick, type, disabled }) {
   return (
-    <StyledButton type={type} onClick={onClick}>
+    <StyledButton
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </StyledButton>
   );
@@ -36,13 +40,17 @@ const StyledButton = styled.button`
   border-radius: 0.4rem;
   cursor: pointer;
 
-  :disabled {
-    color: grey;
-    opacity: 0.7;
-    cursor: default;
-  }
-
   :hover {
     background-color: #f01f30;
+  }
+
+  :disabled {
+    color: gray;
+    background-color: #c0c0c0;
+    opacity: 0.7;
+    cursor: default;
+    :hover {
+      background-color: #c0c0c0;
+    }
   }
 `;

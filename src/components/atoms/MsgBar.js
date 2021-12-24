@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../atoms/Button';
 import { addMsg } from '../../features/chatSlice';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 
 export default function MsgBar() {
   const dispatch = useDispatch();
@@ -42,8 +41,14 @@ export default function MsgBar() {
         placeholder='채팅 메시지를 입력하세요.'
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        disabled={currentUser.name ? false : true}
       />
-      <Button type='submit'>보내기</Button>
+      <Button
+        type='submit'
+        disabled={currentUser.name ? false : true}
+      >
+        보내기
+      </Button>
     </StyledMsgBar>
   );
 }

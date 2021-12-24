@@ -3,18 +3,22 @@
 This is simple chat app for vanilla coding 11th mid term exam by Yoon Jinho (윤진호). This project was made with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/). There's no route for one single page.
 
 **Netlify**
+
 - [https://chat-jinho.netlify.app/](https://chat-jinho.netlify.app/)
 
 **Libraries & API**
+
 - react-icons
 - dayjs
 - react-lines-ellipsis
 - [random users API](https://randomuser.me/)
 
 ---
+
 ## Components
 
 **App**
+
 - SideBar
   - Header
   - Friends
@@ -24,6 +28,7 @@ This is simple chat app for vanilla coding 11th mid term exam by Yoon Jinho (윤
 - Chatting
 
 **atoms & molecules**
+
 - Button
 - ChatBubbleReceive
 - ChatBubbleSend
@@ -31,8 +36,11 @@ This is simple chat app for vanilla coding 11th mid term exam by Yoon Jinho (윤
 - MsgBar
 
 ---
+
 ## TODOS
+
 기본 요구사항을 모두 완료했습니다.
+
 - [x] 친구 목록 페이지, 채팅 목록 페이지, 채팅 페이지가 있습니다.
 - [x] 친구 목록 페이지에는 채팅 목록으로 이동할 수 있는 버튼이 있어야 합니다.
 - [x] 친구 목록 페이지에는 친구 이름, 사진과 함께 채팅을 시작할 수 있는 버튼이 있어야 합니다.
@@ -50,15 +58,19 @@ This is simple chat app for vanilla coding 11th mid term exam by Yoon Jinho (윤
 - [x] 초기 어플리케이션 상태에서 나타나는 친구 및 채팅 데이터는 직접 JSON 파일 형식으로 만들어 사용하세요.
 
 추가 구현사항
+
 - [x] App에 최초 진입 시 환영 메시지를 볼 수 있습니다. 다른 사람과 채팅이 시작되면 자동으로 사라집니다.
 - [x] 친구 목록과 채팅 목록에서 현재 내가 누구와 대화하고 있는지 인지할 수 있습니다.
 - [x] 채팅페이지에서 친구와 대화를 시작할때 기존에 대화한 내역이 없으면 안내 메시지가 노출됩니다.
 
 ---
+
 ## Extra TODOS
+
 시험 제출 후 추가로 시도해보려는 부분 입니다.
+
 - [x] 모든 console warnning 요소 제거 완료
-- [ ] Test Code 작성
+- [x] Test Code 작성
 - [ ] 이미지나 파일 전송기능 추가
 - [ ] Dummy User API 연동해서 Sample 자동 생성
-- [ ] Store Design 고도화 (Single source of truth...)
+- [x] Store Design 고도화 (Single source of truth...) (redux toolkit 그대로 활용하기로함)

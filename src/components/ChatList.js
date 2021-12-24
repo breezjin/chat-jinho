@@ -4,15 +4,14 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 export default function ChatList() {
-  const allChats = useSelector(state => state.chat.allChats)
+  const { allChats, chattingUsers } = useSelector(state => state.chat)
   const sortedAllChats = [...allChats].sort((a, b) =>
     a.msgs[a.msgs.length - 1].time < b.msgs[b.msgs.length - 1].time ? 1 : -1
   );
-  const chattingUsers = useSelector(state => state.chat.chattingUsers);
 
-  function findUserbyChat(item) {
+  function findUserByChat(chat) {
     for (let i = 0; i < chattingUsers.length; i++) {
-      if (chattingUsers[i].name === item.name) {
+      if (chattingUsers[i].name === chat.name) {
         return chattingUsers[i];
       }
     }
@@ -20,8 +19,8 @@ export default function ChatList() {
 
   return (
     <StyledChatList>
-      {Array.from(sortedAllChats).map(item =>
-        <ChatCard key={item.id} user={findUserbyChat(item)} chat={item} />
+      {Array.from(sortedAllChats).map(chat =>
+        <ChatCard key={chat.id} user={findUserByChat(chat)} chat={chat} />
       )}
     </StyledChatList>
   );

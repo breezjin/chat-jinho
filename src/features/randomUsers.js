@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
+const API_URL = 'https://randomuser.me/api/?results=10';
+const useRandomUsersApi = true;
 const randomUsers = [];
-const randomUsersApi = false;
-
-
 
 async function getRandomUsers() {
-  if (randomUsersApi) {
-    const apiData = await axios.get('https://randomuser.me/api/?results=10');
+  if (useRandomUsersApi) {
+    const apiData = await axios.get(API_URL);
     console.log('apiData', apiData);//!!!!!!!!
     const { results } = apiData.data;
     console.log('results', results);//!!!!!!!!
