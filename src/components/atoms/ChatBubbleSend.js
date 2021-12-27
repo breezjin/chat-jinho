@@ -8,9 +8,10 @@ export default function ChatBubbleSend({ chat }) {
       <div className='msg'>
         <div className='bubble'>
           {chat.msg}
+          {<img src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbzmSNa%2FbtrnCBxAfPA%2FYlCBnAKHW1oKLaOsCRqpDk%2Fimg.jpg' alt='img' />}
         </div>
         <div className='chat-time'>
-        {chat.time}
+          {chat.time}
         </div>
       </div>
     </StyledChatBubbleSend>
@@ -47,5 +48,10 @@ const StyledChatBubbleSend = styled.div`
   .chat-time {
     font-size: x-small;
     margin-right: 1rem;
+  }
+
+  img {
+    width: 100%;
+    margin-top: 0.4rem;
   }
 `;
